@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 
 export default function Navbar() {
-  const loggedIn = true;
+  const { user, logout } = useContext(AuthContext);
+
+  const onLogout = () => {
+    logout();
+  };
+
   return (
     <>
-      {loggedIn ? (
+      {user ? (
         <div className="navbar">
           <div className="left-nav">
             <img
@@ -12,9 +19,19 @@ export default function Navbar() {
               src="https://aniyuki.com/wp-content/uploads/2021/12/aniyuki-sad-anime-avatar-image-90.jpg"
               alt="avatar"
             />
-            <span>Username</span>
+            {user ? (
+              <>
+                <span>{user.username}</span>
+              </>
+            ) : (
+              <>
+                <span>Username</span>
+              </>
+            )}
           </div>
-          <span>Logout</span>
+          <Link to="/" onClick={onLogout}>
+            Logout
+          </Link>
         </div>
       ) : (
         <div className="navbar">

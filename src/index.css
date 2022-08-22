@@ -43,12 +43,14 @@
   border-bottom: 1px solid #808080;
   font-weight: bold;
 }
-.navbar span {
+.navbar a {
   font-size: 18px;
   margin-right: 90px;
   margin-top: 10px;
   border-bottom: 1px solid #808080;
   font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
 /*--------------NAVBAR--------------*/
@@ -214,6 +216,17 @@ input[type="password"] {
 .signup-btn {
   margin-top: 80px !important;
   margin-bottom: -30px !important;
+  color: white;
+  border: 1px solid var(--formBorderColor);
+  background-color: transparent;
+  width: 204px;
+  height: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /*------SIGNUP-LOGIN-CONTAINER------*/
 
@@ -227,12 +240,20 @@ input[type="password"] {
   background-color: var(--userListColor);
   border-right: 3px solid #fbb454;
   border-top-right-radius: 30px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.user-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .userlist-header {
   background-color: var(--msgColor);
   text-align: center;
   border-radius: 5px;
+  padding: 5px;
 }
 
 .chat-container {
@@ -247,6 +268,13 @@ input[type="password"] {
   height: 93%;
   box-sizing: border-box;
   background-color: var(--userListColor);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.chat-sub-container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .chat-container form {
@@ -283,35 +311,64 @@ textarea::-webkit-scrollbar {
   border: none;
   text-align: center;
   color: white;
-  padding: 5px 26px;
+  padding: 4px 25px;
   cursor: pointer;
   box-sizing: border-box;
 }
 /* msg sent , received */
 .message-styles {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 10px 0px 0px 10px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 35px 0px 0px 10px;
   background-color: var(--msgColor);
   width: 50%;
   border-radius: 40px;
   min-height: 50px;
+  word-break: break-all;
+  padding: 8px;
 }
 
 .message-styles-ownmsg {
-  float: right;
+  padding: 8px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 10px 10px 10px 0px;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 35px 0px 10px auto;
   background-color: var(--msgColor);
   width: 50%;
   border-radius: 40px;
   min-height: 50px;
-  clear: both;
+  word-break: break-all;
 }
 /* msg sent , received */
+
+.myMessageUsername {
+  position: relative;
+  top: -40px;
+  right: 40px;
+  font-size: 24px;
+  color: var(--msgColor);
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+.myMessageUsername-other {
+  position: relative;
+  top: -40px;
+  right: -40px;
+  color: var(--msgColor);
+  white-space: nowrap;
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+.userlist-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 .msg-avatar {
   width: 40px;
   height: 40px;
@@ -368,15 +425,17 @@ textarea::-webkit-scrollbar {
 }
 
 .msg-text {
-  margin-left: 10px;
+  margin-left: 5px;
   font-weight: bold;
   font-size: 16px;
+  padding: 5px;
 }
 
 .msg-text-owntext {
-  margin-right: 10px;
+  margin-right: 5px;
   font-weight: bold;
   font-size: 16px;
+  padding: 5px;
 }
 .user {
   margin-left: 10px;
@@ -385,3 +444,34 @@ textarea::-webkit-scrollbar {
   color: #fff;
 }
 /*-----------TEXT-EFFECTS-----------*/
+
+/* TEST */
+.message-top-section {
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.message-mid-section {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 5px 5px;
+}
+
+.message-top-section-other {
+  width: 100%;
+  height: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message-mid-section-other {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 5px;
+}
