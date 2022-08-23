@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../context/authContext";
+import defaultavatar from "../img/defaultavatar.jpg";
 
 export default function Navbar() {
   const { user, logout } = useContext(AuthContext);
@@ -14,11 +15,7 @@ export default function Navbar() {
       {user ? (
         <div className="navbar">
           <div className="left-nav">
-            <img
-              className="avatar"
-              src="https://aniyuki.com/wp-content/uploads/2021/12/aniyuki-sad-anime-avatar-image-90.jpg"
-              alt="avatar"
-            />
+            <img className="avatar" src={defaultavatar} alt="avatar" />
             {user ? (
               <>
                 <span>{user.username}</span>

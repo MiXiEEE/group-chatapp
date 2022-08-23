@@ -1,14 +1,10 @@
 import React from "react";
-
+import defaultavatar from "../img/defaultavatar.jpg";
 export default function User({ user }) {
   return (
     <div className="user-styles">
       <span className="user">
-        <img
-          className="userlist-avatar"
-          src="https://aniyuki.com/wp-content/uploads/2021/12/aniyuki-sad-anime-avatar-image-90.jpg"
-          alt="userimg"
-        />
+        <img className="userlist-avatar" src={defaultavatar} alt="userimg" />
       </span>
       <span className="user">{user.username}</span>
     </div>

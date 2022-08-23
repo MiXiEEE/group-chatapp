@@ -25,6 +25,14 @@ export default function Signup() {
     registerUser();
   };
 
+  const [selectImage, setSelectImage] = useState(defaultavatar);
+
+  const imageChange = (event) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setSelectImage(event.target.files[0]);
+    }
+  };
+
   const { onChange, onSubmit, values } = useForm(registerUserCallback, {
     username: "",
     password: "",
@@ -40,14 +48,6 @@ export default function Signup() {
     },
     variables: { registerInput: values },
   });
-
-  const [selectImage, setSelectImage] = useState(defaultavatar);
-
-  const imageChange = (event) => {
-    if (event.target.files && event.target.files.length > 0) {
-      setSelectImage(event.target.files[0]);
-    }
-  };
 
   return (
     <div className="main-container">

@@ -1,6 +1,7 @@
 import { gql, useQuery, useSubscription } from "@apollo/client";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/authContext";
+import defaultavatar from "../img/defaultavatar.jpg";
 
 const DISPLAY_MESSAGES = gql`
   query Messages {
@@ -66,11 +67,7 @@ export default function Messages() {
               </div>
               <div className="message-mid-section-other">
                 <span>
-                  <img
-                    className="msg-avatar"
-                    src="https://aniyuki.com/wp-content/uploads/2021/12/aniyuki-sad-anime-avatar-image-90.jpg"
-                    alt="img"
-                  />
+                  <img className="msg-avatar" src={defaultavatar} alt="img" />
                 </span>
                 <span className="msg-text">{msg.body}</span>
               </div>
@@ -85,11 +82,7 @@ export default function Messages() {
               <div className="message-mid-section">
                 <span className="msg-text-owntext">{msg.body}</span>
                 <span>
-                  <img
-                    className="msg-avatar"
-                    src="https://aniyuki.com/wp-content/uploads/2021/12/aniyuki-sad-anime-avatar-image-90.jpg"
-                    alt="img"
-                  />
+                  <img className="msg-avatar" src={defaultavatar} alt="img" />
                 </span>
               </div>
             </div>
